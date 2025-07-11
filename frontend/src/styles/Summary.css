@@ -1,0 +1,183 @@
+/* Make sure everything stretches to full width and height, no margins */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #ddd;
+  font-family: 'Poppins', sans-serif;
+
+  /* Center container vertically & horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Container now takes full width, but stays centered content inside */
+.container {
+  width: 100%;
+  max-width: 800px;        /* content max width */
+  margin: 0 auto;          /* center horizontally */
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-sizing: border-box;  /* include padding inside width */
+}
+
+/* Headings */
+h2 {
+  color: #7fff00;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h3 {
+  color: #b4ff00;
+  margin-top: 1.5rem;
+}
+
+/* Text and lists */
+p, li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+
+/* Dropdowns and button styling */
+select {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  display: block;
+  width: 50%;                 /* make button narrower (instead of full width) */
+  margin: 1rem auto 0 auto;   /* center horizontally */
+  background-color: #7fff00;
+  color: #000;
+  border: none;
+  padding: 0.4rem 1rem;       /* slightly smaller padding */
+  border-radius: 20px;
+  font-size: 1rem;           /* slightly smaller text */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Container to hold select + span inside same box */
+.select-with-span {
+  position: relative;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+/* Style the span to appear inside the same box on the right */
+.selected-span {
+  position: absolute;
+  right: 1rem;        /* adjust spacing from right edge */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7fff00;
+  font-size: 0.9rem;
+  pointer-events: none;   /* let clicks go through to select */
+}
+
+
+button:hover {
+  background-color: #aaff33;
+}
+
+/* Navbar at the top of screen */
+.navbar {
+  width: 100%;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+  position: fixed;   /* keep it at top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-left {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #7fff00;
+}
+
+.nav-right .emoji-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+/* Move down main content to not hide under fixed navbar */
+.container {
+  margin-top: 60px;  /* adjust based on navbar height */
+}
+
+/* Rectangle styled select fields */
+.input-rectangle {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 2px solid #444;
+  border-radius: 8px;    /* keep slight round edges; use 0px if you want sharp rectangles */
+  font-size: 1rem;
+  appearance: none;      /* remove default arrow style, optional */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Optional: Add a custom arrow icon using background-image if you like */
+.input-rectangle:focus {
+  outline: none;
+  border-color: #7fff00;  /* highlight border when focused */
+}
+
+
+/* Responsive tweaks for small screens */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+    border-radius: 0;        /* remove rounded corners on tiny screens if you want */
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  p, li {
+    font-size: 0.95rem;
+  }
+}
